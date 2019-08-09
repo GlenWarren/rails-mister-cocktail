@@ -1,10 +1,16 @@
 <div class="container pt-5">
-<h1>Cocktails#show</h1>
-
-<%= @cocktail.name %> -
-<%= link_to 'edit', edit_cocktail_path(@cocktail) %>
-<br><br>
+<!-- <h1>Cocktails#show</h1> -->
+<%= cl_image_tag @cocktail.photo, height: 200, crop: :fill %>
+<br>
+<h2><%= @cocktail.name %></h2>
+<h6>
+<%= link_to 'edit', edit_cocktail_path(@cocktail) %> |
+<%= link_to 'delete', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'home', cocktails_path %>
+</h6>
+<h4>
 Specs:
+</h4>
 <br>
 <% @cocktail.doses.each do |d| %>
   <%= d.ingredient.name %> -
@@ -14,8 +20,4 @@ Specs:
 <% end %>
 <br>
 <%= link_to 'Add Dose', new_cocktail_dose_path(@cocktail) %>
-<br><br>
-<%= link_to 'Delete Cocktail', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?' } %>
-<br>
-<%= link_to 'Home', cocktails_path %>
 </div>

@@ -9,17 +9,17 @@
     <h5>Gin boldly where no human has ginned before.....</h5>
   </div>
 </div>
-<div class="container d-flex justify-content-center">
+<div class="container d-flex justify-content-center mb-3">
 
 <% @cocktails.each do |c| %>
-  <div class="card h-100 w-100 m-3">
-  <%= link_to c.name, cocktail_path(c) %>
+  <div class="card m-3">
+  <%= cl_image_tag c.photo, height: 120, crop: :fill, class: "border" %>
+  <%= link_to c.name, cocktail_path(c), class: "m-1" %>
   <br>
   </div>
 <% end %>
 <br>
 </div>
-<div class="container">
-
-<%= link_to 'New spock-tail', new_cocktail_path, class: "btn btn-info m-3" %>
+<div class="container d-flex justify-content-center">
+<%= link_to 'New Spocktail', new_cocktail_path, class: "btn btn-info m-5" %>
 </div>
