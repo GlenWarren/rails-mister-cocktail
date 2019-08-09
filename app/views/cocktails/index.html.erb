@@ -1,8 +1,17 @@
-<h1>Cocktails#index</h1>
-
+<div class="banner">
+  <div class="container">
+    <h1><strong>Shpocktails</strong></h1><br>
+    <h5>Set phasers to rum!</h5>
+    <h5>Beam me up Scotchy...</h5>
+    <h5>Live long, and Piña Colada</h5>
+    <h5>Gin boldly where no human has ginned before.....</h5>
+  </div>
+</div>
+<div class="container">
 <% @cocktails.each do |c| %>
   <%= link_to c.name, cocktail_path(c) %>
   <br>
 <% end %>
 <br>
-+ <%= link_to 'Add new cocktail...', new_cocktail_path %>
+<%= link_to 'Add new shpocktail...', new_cocktail_path %>
+</div>
