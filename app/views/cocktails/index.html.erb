@@ -13,7 +13,7 @@
 
 <% @cocktails.each do |c| %>
   <div class="card m-3">
-  <%= cl_image_tag c.photo, height: 120, crop: :fill, class: "border" %>
+  <%= cl_image_tag c.photo, height: 120, crop: :scale, class: "border rounded" %>
   <%= link_to c.name, cocktail_path(c), class: "m-1" %>
   <br>
   </div>
